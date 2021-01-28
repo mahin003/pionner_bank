@@ -100,9 +100,11 @@
   const widrawBtn=document.getElementById("addWidraw");
   widrawBtn.addEventListener("click",function(){
       const widrawAmount=document.getElementById("widrawAmount").value;
-      const widrawNumber= parseFloat(widrawAmount);
-       
+      const widrawNumber= parseFloat(widrawAmount); 
       console.log(widrawNumber);
+      UpdateSpan("currentWidraw", widrawNumber);
+       UpdateSpan("currentBalance",-1*widrawNumber);
+       document.getElementById("widrawAmount").value="";
   })
 
   function UpdateSpan(id,depositNumber){
